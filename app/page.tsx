@@ -162,21 +162,21 @@ export default function Home() {
     const [tags, setTags] = useState(tagsData)
     const [filter, setFilter] = useState("most_upvotes")
 
-    const filterSuggestions = (): void => {
+    const filterSuggestions = (filter: any): void => {
         if (filter === "most_upvotes") {
-            setFilteredSuggestions(data.sort((a, b) => b.votes - a.votes))
+            setFilteredSuggestions(filteredSuggestions.sort((a, b) => b.votes - a.votes))
         } else if (filter === "least_upvotes") {
-            setFilteredSuggestions(data.sort((a, b) => a.votes - b.votes))
+            setFilteredSuggestions(filteredSuggestions.sort((a, b) => a.votes - b.votes))
         } else if (filter === "most_comments") {
-            setFilteredSuggestions(data.sort((a, b) => b.comments.length - a.comments.length))
+            setFilteredSuggestions(filteredSuggestions.sort((a, b) => b.comments.length - a.comments.length))
         } else if (filter === "least_comments") {
-            setFilteredSuggestions(data.sort((a, b) => a.comments.length - b.comments.length))
+            setFilteredSuggestions(filteredSuggestions.sort((a, b) => a.comments.length - b.comments.length))
         }
 
         setFilter(filter)
     }
     const increaseVote = (id: number) => {
-        setSuggestions(suggestions.map((suggestion) => {
+        setFilteredSuggestions(filteredSuggestions.map((suggestion) => {
             if (suggestion.id === id) {
                 return {
                     ...suggestion,
@@ -188,6 +188,7 @@ export default function Home() {
         }))
     }
     const filterByTag = (tag: string) => {
+        setFilter('most_upvotes')
         setTag(tag)
     }
 
