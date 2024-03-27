@@ -162,7 +162,7 @@ export default function Home() {
     const [tags, setTags] = useState(tagsData)
     const [filter, setFilter] = useState("most_upvotes")
 
-    const filterSuggestions = (filter: string): void => {
+    const filterSuggestions = (): void => {
         if (filter === "most_upvotes") {
             setSuggestions(data.sort((a, b) => b.votes - a.votes))
         } else if (filter === "least_upvotes") {
