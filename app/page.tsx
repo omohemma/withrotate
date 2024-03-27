@@ -164,13 +164,13 @@ export default function Home() {
 
     const filterSuggestions = (): void => {
         if (filter === "most_upvotes") {
-            setSuggestions(data.sort((a, b) => b.votes - a.votes))
+            setFilteredSuggestions(data.sort((a, b) => b.votes - a.votes))
         } else if (filter === "least_upvotes") {
-            setSuggestions(data.sort((a, b) => a.votes - b.votes))
+            setFilteredSuggestions(data.sort((a, b) => a.votes - b.votes))
         } else if (filter === "most_comments") {
-            setSuggestions(data.sort((a, b) => b.comments.length - a.comments.length))
+            setFilteredSuggestions(data.sort((a, b) => b.comments.length - a.comments.length))
         } else if (filter === "least_comments") {
-            setSuggestions(data.sort((a, b) => a.comments.length - b.comments.length))
+            setFilteredSuggestions(data.sort((a, b) => a.comments.length - b.comments.length))
         }
 
         setFilter(filter)
