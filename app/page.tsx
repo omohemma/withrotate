@@ -280,13 +280,13 @@ export default function Home() {
                                     <Image
                                         priority
                                         src="/bulb.svg"
-                                        alt="Picture of the author"
+                                        alt="Bulb"
                                         width={24}
                                         height={24}
                                     />
 
                                     <Text color="brand.white" fontWeight={"bold"}
-                                          fontSize={"18px"}>{suggestions.length ?? 0} Suggestions</Text>
+                                          fontSize={"18px"}>{filteredSuggestions.length ?? 0} Suggestions</Text>
                                 </HStack>
 
                                 <HStack>
