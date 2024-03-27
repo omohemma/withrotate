@@ -27,4 +27,4 @@
     ```
 
    Open your browser and visit `http://localhost:3000`. You should see your NextJS application. You can also visit via
-   this link https://
+   this link https://withrotate-task.netlify.app
