@@ -1,6 +1,12 @@
 import type {Metadata} from "next";
+import {Jost} from "next/font/google";
+// import "./globals.css";
 import {Providers} from './providers'
-import {fonts} from './fonts'
+
+const font = Jost({
+    subsets: ['latin'],
+    variable: '--font-jost',
+});
 
 export const metadata: Metadata = {
     title: "WithRotate - Suggestions",
@@ -14,7 +20,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body className={fonts.jost.className}>
+        <body className={font.className}>
         <Providers>{children}</Providers>
         </body>
         </html>
